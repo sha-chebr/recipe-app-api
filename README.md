@@ -27,3 +27,20 @@ docker-compose run --rm app sh -c "python manage.py test"
 
 #9 wait_for_db:
 docker-compose run --rm app sh -c "python manage.py wait_for_db"
+
+#10 makemigrations:
+docker-compose run --rm app sh -c "python manage.py makemigrations"
+
+#11 migrate:
+docker-compose run --rm app sh -c "python manage.py wait_for_db && python manage.py migrate"
+    - this will raise "django.db.migrations.exceptions.InconsistentMigrationHistory" exception
+    - follow the steps below to resolve.
+        1. run "docker volume ls"
+        2. get the database volume (in our case it is "recipe-app-api-dev-db-data")
+        3. remove the volume. run "docker volume rm recipe-app-api_dev-db-data" (make sure the docker-compose down command is run first)
+        4. Now run #11 migrate command
+
+#12 create superuser:
+docker-compose run --rm app sh -c "python manage.py wait_for_db && python manage.py createsuperuser"
+Email: admin@example.com
+Password: admin
