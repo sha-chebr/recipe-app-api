@@ -9,8 +9,8 @@ from core import models
 
 
 class UserAdmin(BaseUserAdmin):
-    """Define the admin oages for users"""
+    """Define the admin pages for users"""
     ordering = ['id']
-    list_display = ['email', 'email']
+    list_display = ['email', 'name']
 
 admin.site.register(models.User, UserAdmin)
