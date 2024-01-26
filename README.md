@@ -44,3 +44,7 @@ docker-compose run --rm app sh -c "python manage.py wait_for_db && python manage
 docker-compose run --rm app sh -c "python manage.py wait_for_db && python manage.py createsuperuser"
 Email: admin@example.com
 Password: admin
+
+User One:
+user@example.com
+userone1
