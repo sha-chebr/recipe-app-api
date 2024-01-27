@@ -48,3 +48,6 @@ Password: admin
 User One:
 user@example.com
 userone1
+
+#13 Create user app
+docker-compose run --rm app sh -c "python manage.py startapp user"
