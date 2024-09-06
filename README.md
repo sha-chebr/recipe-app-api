@@ -54,3 +54,6 @@ docker-compose run --rm app sh -c "python manage.py startapp user"
 
 #14 User Two
 Awesome!23 436625ccd30ca28d68ad9c23e1871dfbad8e7938
+
+#15 create another django-project called "recipe":
+docker-compose run --rm app sh -c "python manage.py startapp recipe"
